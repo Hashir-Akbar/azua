@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Open Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            font-variation-settings:
+                "wdth" 100;
+            line-height: 1.5;
+        }
+
+
+        .header_one {
+            background-color: #001b41;
+        }
+
+
+
+        nav,
+        .header_two_dropdown {
+            max-width: 1140px;
+            margin-inline: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            display: flex;
+            align-items: center;
+            height: 80px;
+            /* gap: 3em; */
+
+
+        }
+
+        .header_two_dropdown {
+            height: auto;
+            align-items: start;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .header_two nav {
+            height: auto;
+        }
+
+        .header_two svg {
+            transition: 300ms all ease-in-out;
+        }
+
+        .nav_login_btn {
+            margin-left: auto;
+        }
+
+        .nav_img {
+            align-self: center;
+        }
+
+        .header_btn,
+        .nav_login_btn div {
+            display: flex;
+            gap: .3em;
+        }
+
+        .header_btn {
+            gap: 0;
+        }
+
+        .header_btn {
+            margin-left: 3em;
+        }
+
+        .nav_login_btn {
+            align-self: center;
+            display: flex;
+            gap: 1em;
+        }
+
+        .nav_login_btn div {
+
+
+            border: 1px solid white;
+            padding: .3em .8em;
+            gap: .6em;
+            box-shadow: 0 7px 14px rgba(74, 85, 104, .1), 0 3px 6px rgba(0, 0, 0, .08);
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .nav_login_btn a {
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .header_btn a,
+        .nav_login_btn a {
+
+            display: block;
+        }
+
+        .header_btn a {
+            padding: 12px 16px 16px 8px;
+            text-decoration: none;
+
+            background-color: #0b2a63;
+            color: white;
+            font-weight: 600;
+
+
+
+
+            font-size: 16px;
+        }
+
+        .header_btn a:first-child {
+            border-top-left-radius: .25rem;
+            border-bottom-left-radius: .25rem;
+        }
+
+        .header_btn a:last-child {
+            border-top-right-radius: .25rem;
+            border-bottom-right-radius: .25rem;
+        }
+
+        .header_btn a:first-child {
+            background-color: #ffff;
+            color: rgb(0, 0, 0);
+        }
+
+        .header_btn a:last-child {
+            background-color: #0b2a63;
+            color: white
+        }
+
+        .header_btn a:hover:not(:first-child) {
+            color: #000000;
+            background-color: rgb(17 199 230)
+        }
+
+        .hamburger_menu,
+        .mobile_items_nav {
+            display: none;
+        }
+
+        .hamburger_menu {
+            cursor: pointer;
+        }
+
+        .header_two nav {
+            justify-content: space-between;
+
+        }
+
+        .header_two nav a {
+            display: flex;
+            gap: .3em;
+            align-items: center;
+            color: #001b41;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding-block: 1em;
+        }
+
+        .header_two_dropdown_container {
+            border-top: 1px solid #d1d5db;
+        }
+
+        .header_two_dropdown_inner {
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+            margin-top: 20px;
+        }
+
+        .header_two_dropdown_inner .title {
+            font-size: 16px;
+            padding-top: 10px;
+        }
+
+        .header_two_dropdown_inner .detail-item-title {
+            display: flex;
+            align-items: center;
+            gap: .4em;
+            text-decoration: none;
+        }
+
+        .header_two_dropdown_inner .detail-item-title {
+            font-weight: 700;
+            color: rgb(34 56 87);
+            font-size: 16px;
+
+        }
+
+        .header_two_dropdown_inner .sub-detail-item-title {
+            font-size: 14px;
+            border-left: 1px solid #dfe2e7;
+            padding: .67em 1.8em;
+            position: relative;
+        }
+
+        .header_two_dropdown_inner .sub-detail-item-title::before {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 20px;
+            background-color: #dfe2e7;
+            position: absolute;
+            rotate: 90deg;
+            left: 10px;
+        }
+
+        .header_two_dropdown_inner .detail-item-title:hover {
+            color: rgb(22, 120, 201);
+        }
+
+        .header_two_dropdown_inner p {
+            font-size: 14px;
+            color: #223857;
+        }
+
+        .header_two_dropdown_inner .details {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+
+        .header_two_dropdown_inner_container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .header_two_dropdown_four {
+            grid-template-columns: 1fr 1fr 1fr 1.1fr;
+            gap: 1em;
+
+        }
+
+        .header_two_dropdown_inner.use_case {
+            gap: 0;
+            background-color: #f6f7f8;
+            padding-inline: 1.3em;
+
+
+        }
+
+        .header_two_dropdown_inner.use_case .title {
+            padding-bottom: .4em;
+            border-bottom: 1px solid rgb(223 226 231);
+        }
+
+        .header_two_dropdown_inner.use_case .details {
+            padding-block: 1em 2em;
+            padding-inline: 1.2em;
+        }
+
+        .header_topbar {
+            background-image: linear-gradient(90deg, #0c0a60 0%, #1043d7 100%);
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+
+        }
+
+        .header_topbar_inner {
+            display: flex;
+
+        }
+
+        .header_topbar_inner span,
+        .header_topbar_inner div {
+            padding-inline: 1em;
+            padding-block: .2em;
+            margin-block: .5em;
+        }
+
+        .header_topbar_inner span {
+            border-right: 1px solid #718096;
+        }
+
+        .domain_search_mobile {
+            background-image: linear-gradient(180deg, #001d46 0%, #002456 100%);
+            color: white;
+            padding-block: 1em 2em;
+            display: none;
+            flex-direction: column;
+            gap: 1em;
+            align-items: center;
+            padding-inline: 1em;
+        }
+
+        .domain_search_txt {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+            font-weight: 600;
+        }
+
+        .domain_search_txt img {
+            height: 20px;
+        }
+
+        .domain_search_mobile_form .input_group input {
+            border: none;
+            background-color: transparent;
+            width: 100%;
+            padding: .7em 1em .9em 1em;
+            border-radius: 26px;
+
+        }
+
+        .domain_search_mobile_form .input_group input:focus {
+            outline: none;
+        }
+
+        .domain_search_mobile_form .input_group input::placeholder {
+            color: black;
+            font-size: 15px;
+        }
+
+        .domain_search_mobile_form .input_group {
+            background-color: white;
+            max-width: 400px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 26px;
+            margin-inline: auto;
+            width: 100%;
+
+            font-size: 1.125em;
+        }
+
+        .domain_search_mobile_form .input_group button {
+
+            border: none;
+            background-color: #ffaa00;
+            padding: .8em .8em .3em .8em;
+            margin: .3em 15px .3em 0;
+            border-radius: 26px;
+        }
+
+        .domain_search_mobile_form {
+            width: 100%;
+        }
+
+        .mobile_header .header_btn a {
+            background-color: transparent;
+            color: black;
+            white-space: nowrap;
+        }
+
+        .mobile_header .header_btn a:hover {
+            background-color: transparent;
+        }
+
+        .mobile_header .header_btn {
+            display: none;
+            overflow-x: scroll;
+            margin-left: 0em;
+            background-color: #f6f7f8;
+        }
+
+        .mobile_header .header_btn::-webkit-scrollbar {
+            width: 0;
+            /* Remove scrollbar width */
+            height: 0;
+            /* Remove scrollbar height */
+        }
+
+        .mobile_header .header_btn::-webkit-scrollbar-track {
+            background: transparent;
+            /* Change scrollbar track color */
+        }
+
+        .mobile_header .header_btn::-webkit-scrollbar-thumb {
+            background: #888;
+            /* Change scrollbar thumb color */
+        }
+
+        .mobile_header {
+            position: absolute;
+            top: 130px;
+            width: 100%;
+            background-color: white;
+        }
+
+        .mobile_header_dropdowns_item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-inline: .8em;
+            padding-block: 1em;
+            cursor: pointer;
+        }
+
+        .mobile_dropdowns .header_two_dropdown_inner {
+            margin-top: 20px;
+            gap: 1em;
+        }
+
+        .mobile_dropdowns .header_two_dropdown_inner:first-child {
+            margin-top: 0;
+        }
+
+        .mobile_dropdowns .header_two_dropdown_inner .details {
+
+            padding-inline: 1.2em;
+        }
+
+        .mobile_dropdowns .header_two_dropdown_inner {
+            padding-inline: .9em;
+        }
+
+        .mobile_dropdowns {
+            background-color: #f6f7f8;
+        }
+
+        .mobile_header_dropdowns_item svg {
+            transition: 200ms all ease-in-out;
+        }
+
+        .mobile_header {
+            display: none;
+        }
+
+        @media(max-width:1024px) {
+
+            .header_btn,
+            .nav_login_btn,
+            .header_two,
+            .header_two_dropdown {
+                display: none;
+            }
+
+
+
+            .hamburger_menu {
+                display: block;
+            }
+
+            nav {
+                align-items: center;
+            }
+
+            .nav_img {
+                margin-inline: auto;
+            }
+        }
+
+        @media (max-width: 580px) {
+
+            .mobile_items_nav,
+            .mobile_header {
+                display: block;
+            }
+
+            .header_topbar {
+                font-size: 14px;
+            }
+
+            .domain_search_mobile,
+            .mobile_header .header_btn {
+                display: flex;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <div class="header_topbar">
+            <div class="header_topbar_inner">
+                <span>Starter</span>
+                <span>SME</span>
+                <span>Large enterprise</span>
+                <div>
+                    24/7 Support
+                </div>
+            </div>
+        </div>
+        <div class="header_one">
+            <nav>
+                <div class="hamburger_menu">
+                    <svg viewBox="0 0 9.75 6" overflow="visible" preserveAspectRatio="none" width="26" height="16">
+                        <line x1="0" x2="9.75" y1="0" y2="0" stroke="#fff" stroke-width="2"
+                            vector-effect="non-scaling-stroke" style="transform: none; transform-origin: 0px 0px 0px;"
+                            transform-origin="0px 0px"></line>
+                        <line x1="0" x2="9.75" y1="3" y2="3" stroke="#fff" stroke-width="2"
+                            vector-effect="non-scaling-stroke" opacity="1"></line>
+                        <line x1="0" x2="9.75" y1="6" y2="6" stroke="#fff" stroke-width="2"
+                            vector-effect="non-scaling-stroke" style="transform: none; transform-origin: 0px 0px 0px;"
+                            transform-origin="0px 0px"></line>
+                    </svg>
+                </div>
+                <a href="" class="nav_img"><img src="./images/logodesktop.png" alt=""></a>
+                <div class="header_btn">
+                    <a href="">Domains & Hosting</a>
+                    <a href="">Cloud Computing</a>
+                    <a href="">Web Services</a>
+                    <a href="">Business Solutions</a>
+                </div>
+                <div class="nav_login_btn">
+                    <div>
+                        <a href="">
+                            <svg class="svg-inline--fa fa-user" style="width: 0.875em; vertical-align: -0.125em;"
+                                aria-hidden="true" focusable="false" data-prefix="far" data-icon="user" role="img"
+                                xmlns="#" viewBox="0 0 448 512" data-fa-i2svg="">
+                                <path fill="currentColor"
+                                    d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-140c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z">
+                                </path>
+                            </svg>
+                            Web Mail</a>
+                    </div>
+                    <div> <a href="">
+                            <svg class="svg-inline--fa fa-user" style="width: 0.875em; vertical-align: -0.125em;"
+                                aria-hidden="true" focusable="false" data-prefix="far" data-icon="user" role="img"
+                                xmlns="#" viewBox="0 0 448 512" data-fa-i2svg="">
+                                <path fill="currentColor"
+                                    d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-140c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z">
+                                </path>
+                            </svg>
+                            Login</a>
+                    </div>
+                </div>
+                <div class="mobile_items_nav">
+                    <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="22" height="22"
+                            class="tw-inline tw-mr-10">
+                            <path
+                                d="M25.44 2a2.72 2.72 0 0 1 1.86.52l.62.59c1 .95 2.13 2 2.09 3.09a3.85 3.85 0 0 1-1.73 2.46c-1.46 1.17-2.61 1.77-3.42 1.77s-1.41-.59-2.36-1.55l-.33-.34a2.22 2.22 0 0 0-1.61-.64c-1.06 0-3 .53-7.57 5.09-3.15 3.14-6.5 7-4.49 9.14l.34.32c1.69 1.67 2.46 2.43-.22 5.77C7.74 29.42 6.88 30 6.13 30c-1 0-2.09-1.11-3-2.09l-.56-.58c-1.58-1.58.22-9.2 7.9-16.88C17.06 3.77 23 2 25.44 2m0-2C22 0 15.65 2.36 9 9 .86 17.14-1.7 25.92 1.1 28.71l.56.58C2.8 30.5 4.23 32 6.13 32c1.41 0 2.75-.81 4.09-2.48 3.54-4.4 2.26-6.28.06-8.44l-.28-.32s-.72-1.19 4.45-6.36c4.07-4.06 5.66-4.5 6.16-4.5.14 0 .18 0 .2.06l.32.32c1 1.06 2.11 2.15 3.78 2.15 1.31 0 2.8-.7 4.67-2.21C31.14 8.93 32 7.64 32 6.28c.09-2-1.46-3.44-2.7-4.61-.2-.2-.4-.38-.58-.57A4.54 4.54 0 0 0 25.44 0Z"
+                                style="fill:#fff"></path>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+        </div>
+
+        <div class="header_two">
+            <nav>
+                <a href="" class="domains_click">
+                    <span>Domains</span>
+                    <svg class="domain_click_icon svg-inline--fa fa-caret-down fs-12 ms-1 "
+                        style="width: 0.625em; vertical-align: -0.125em;" aria-hidden="true" focusable="false"
+                        data-prefix="fas" data-icon="caret-down" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="" class="web_hosting_click">
+                    <span>Web Hosting</span>
+                    <svg class="svg-inline--fa fa-caret-down fs-12 ms-1 hosting_click_icon"
+                        style="width: 0.625em; vertical-align: -0.125em;" aria-hidden="true" focusable="false"
+                        data-prefix="fas" data-icon="caret-down" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="" class="wordpress_hosting_click">
+                    <span>Wordpress Hosting</span>
+                    <svg class="svg-inline--fa fa-caret-down fs-12 ms-1 wordpress_click_icon"
+                        style="width: 0.625em; vertical-align: -0.125em;" aria-hidden="true" focusable="false"
+                        data-prefix="fas" data-icon="caret-down" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="" class="website_design_click">
+                    <span>Website Design</span>
+                    <svg class="svg-inline--fa fa-caret-down fs-12 ms-1 website_design_click_icon"
+                        style="width: 0.625em; vertical-align: -0.125em;" aria-hidden="true" focusable="false"
+                        data-prefix="fas" data-icon="caret-down" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="" class="cloud_computing_click">
+                    <span>Cloud Computing</span>
+                    <svg class="svg-inline--fa fa-caret-down fs-12 ms-1 cloud_computing_click_icon"
+                        style="width: 0.625em; vertical-align: -0.125em;" aria-hidden="true" focusable="false"
+                        data-prefix="fas" data-icon="caret-down" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="" class="email_office_click">
+                    <span>Email & Office</span>
+                    <svg class="svg-inline--fa fa-caret-down fs-12 ms-1 email_office_click_icon"
+                        style="width: 0.625em; vertical-align: -0.125em;" aria-hidden="true" focusable="false"
+                        data-prefix="fas" data-icon="caret-down" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="" class="vps_hosting_click">
+                    <span>VPS Hosting</span>
+                    <svg class="svg-inline--fa fa-caret-down fs-12 ms-1 vps_hosting_click_icon"
+                        style="width: 0.625em; vertical-align: -0.125em;" aria-hidden="true" focusable="false"
+                        data-prefix="fas" data-icon="caret-down" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+                        </path>
+                    </svg>
+                </a>
+            </nav>
+
+            <div class="header_two_dropdown_container">
+                <div class="header_two_dropdown domains">
+                    <div class="header_two_dropdown_inner">
+                        <div class="title">
+                            Domains
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1"
+                                        class="tw-inline tw-mr-5" style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                    <span>Domain Name Registration</span>
+                                </a>
+                                <p class="detail-item-paragraph">Create your address on the web.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="KI-Icon mit einem Gehirn und neuronalen Netzen" loading="lazy" width="24"
+                                        height="24" decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                        style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/ionos-core/Icons/Mosaic-Blue-on-light/36384-artificial-intelligence.svg">
+                                    <span>Domain Name Transfer</span>
+                                </a>
+                                <p class="detail-item-paragraph">Find your domain name faster with AI.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header_two_dropdown_inner">
+                        <div class="title">
+                            Security
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1"
+                                        class="tw-inline tw-mr-5" style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                    <span>Domain Name Registration</span>
+                                </a>
+                                <p class="detail-item-paragraph">Create your address on the web.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="KI-Icon mit einem Gehirn und neuronalen Netzen" loading="lazy" width="24"
+                                        height="24" decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                        style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/ionos-core/Icons/Mosaic-Blue-on-light/36384-artificial-intelligence.svg">
+                                    <span>Domain Name Transfer</span>
+                                </a>
+                                <p class="detail-item-paragraph">Find your domain name faster with AI.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header_two_dropdown_inner use_case">
+                        <div class="title">
+                            Use Case
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+
+                                    <span>Domain Name Registration</span>
+                                </a>
+                                <p class="detail-item-paragraph">Create your address on the web.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+
+                                    <span>Domain Name Transfer</span>
+                                </a>
+                                <p class="detail-item-paragraph">Find your domain name faster with AI.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="Green electricity icon" loading="lazy" width="24" height="24"
+                                        decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                        style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-green-electricity.svg">
+                                    <span>Sustainability</span>
+                                </a>
+                                <p class="detail-item-paragraph">Hosting for a climate-neutral future</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header_two_dropdown header_two_dropdown_four web_hosting">
+                    <div class="header_two_dropdown_inner">
+                        <div class="title">
+                            Virtual Servers
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1"
+                                        class="tw-inline tw-mr-5" style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                    <span>VPS Hosting</span>
+                                </a>
+                                <p class="detail-item-paragraph">With root access, NVMe storage, and Plesk license</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>VPS Hosting</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="KI-Icon mit einem Gehirn und neuronalen Netzen" loading="lazy" width="24"
+                                        height="24" decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                        style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/ionos-core/Icons/Mosaic-Blue-on-light/36384-artificial-intelligence.svg">
+                                    <span>Cloud Servers</span>
+                                </a>
+                                <p class="detail-item-paragraph">Pay as you go with your own scalable private server.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header_two_dropdown_inner">
+                        <div class="title">
+                            Security
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1"
+                                        class="tw-inline tw-mr-5" style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                    <span>Dedicated Servers</span>
+                                </a>
+                                <p class="detail-item-paragraph">Get enterprise hardware with unlimited traffic</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>VPS Hosting</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="header_two_dropdown_inner">
+                        <div class="title">
+                            Server Tools
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1"
+                                        class="tw-inline tw-mr-5" style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                    <span>Domain Name Registration</span>
+                                </a>
+                                <p class="detail-item-paragraph">Create your address on the web.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="KI-Icon mit einem Gehirn und neuronalen Netzen" loading="lazy" width="24"
+                                        height="24" decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                        style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/ionos-core/Icons/Mosaic-Blue-on-light/36384-artificial-intelligence.svg">
+                                    <span>Domain Name Transfer</span>
+                                </a>
+                                <p class="detail-item-paragraph">Find your domain name faster with AI.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header_two_dropdown_inner use_case">
+                        <div class="title">
+                            Use Case
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+
+                                    <span>Domain Name Registration</span>
+                                </a>
+                                <p class="detail-item-paragraph">Create your address on the web.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+
+                                    <span>Domain Name Transfer</span>
+                                </a>
+                                <p class="detail-item-paragraph">Find your domain name faster with AI.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="Green electricity icon" loading="lazy" width="24" height="24"
+                                        decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                        style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-green-electricity.svg">
+                                    <span>Sustainability</span>
+                                </a>
+                                <p class="detail-item-paragraph">Hosting for a climate-neutral future</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header_two_dropdown header_two_dropdown_four wordpress">
+                    <div class="header_two_dropdown_inner">
+                        <div class="title">
+                            Virtual Servers
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1"
+                                        class="tw-inline tw-mr-5" style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                    <span>VPS Hosting</span>
+                                </a>
+                                <p class="detail-item-paragraph">With root access, NVMe storage, and Plesk license</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>VPS Hosting</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="KI-Icon mit einem Gehirn und neuronalen Netzen" loading="lazy" width="24"
+                                        height="24" decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                        style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/ionos-core/Icons/Mosaic-Blue-on-light/36384-artificial-intelligence.svg">
+                                    <span>Cloud Servers</span>
+                                </a>
+                                <p class="detail-item-paragraph">Pay as you go with your own scalable private server.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header_two_dropdown_inner">
+                        <div class="title">
+                            Security
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1"
+                                        class="tw-inline tw-mr-5" style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                    <span>Dedicated Servers</span>
+                                </a>
+                                <p class="detail-item-paragraph">Get enterprise hardware with unlimited traffic</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>VPS Hosting</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="header_two_dropdown_inner">
+                        <div class="title">
+                            Server Tools
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1"
+                                        class="tw-inline tw-mr-5" style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                    <span>Domain Name Registration</span>
+                                </a>
+                                <p class="detail-item-paragraph">Create your address on the web.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="KI-Icon mit einem Gehirn und neuronalen Netzen" loading="lazy" width="24"
+                                        height="24" decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                        style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/ionos-core/Icons/Mosaic-Blue-on-light/36384-artificial-intelligence.svg">
+                                    <span>Domain Name Transfer</span>
+                                </a>
+                                <p class="detail-item-paragraph">Find your domain name faster with AI.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header_two_dropdown_inner use_case">
+                        <div class="title">
+                            Use Case
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+
+                                    <span>Domain Name Registration</span>
+                                </a>
+                                <p class="detail-item-paragraph">Create your address on the web.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+
+                                    <span>Domain Name Transfer</span>
+                                </a>
+                                <p class="detail-item-paragraph">Find your domain name faster with AI.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="Green electricity icon" loading="lazy" width="24" height="24"
+                                        decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                        style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-green-electricity.svg">
+                                    <span>Sustainability</span>
+                                </a>
+                                <p class="detail-item-paragraph">Hosting for a climate-neutral future</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header_two_dropdown header_two_dropdown_four website_design">
+                    <div class="header_two_dropdown_inner">
+                        <div class="title">
+                            Virtual Servers
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1"
+                                        class="tw-inline tw-mr-5" style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                    <span>VPS Hosting</span>
+                                </a>
+                                <p class="detail-item-paragraph">With root access, NVMe storage, and Plesk license</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>VPS Hosting</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="KI-Icon mit einem Gehirn und neuronalen Netzen" loading="lazy" width="24"
+                                        height="24" decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                        style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/ionos-core/Icons/Mosaic-Blue-on-light/36384-artificial-intelligence.svg">
+                                    <span>Cloud Servers</span>
+                                </a>
+                                <p class="detail-item-paragraph">Pay as you go with your own scalable private server.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header_two_dropdown_inner">
+                        <div class="title">
+                            Security
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1"
+                                        class="tw-inline tw-mr-5" style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                    <span>Dedicated Servers</span>
+                                </a>
+                                <p class="detail-item-paragraph">Get enterprise hardware with unlimited traffic</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>VPS Hosting</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="header_two_dropdown_inner">
+                        <div class="title">
+                            Server Tools
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1"
+                                        class="tw-inline tw-mr-5" style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                    <span>Domain Name Registration</span>
+                                </a>
+                                <p class="detail-item-paragraph">Create your address on the web.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="KI-Icon mit einem Gehirn und neuronalen Netzen" loading="lazy" width="24"
+                                        height="24" decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                        style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/ionos-core/Icons/Mosaic-Blue-on-light/36384-artificial-intelligence.svg">
+                                    <span>Domain Name Transfer</span>
+                                </a>
+                                <p class="detail-item-paragraph">Find your domain name faster with AI.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header_two_dropdown_inner use_case">
+                        <div class="title">
+                            Use Case
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+
+                                    <span>Domain Name Registration</span>
+                                </a>
+                                <p class="detail-item-paragraph">Create your address on the web.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+
+                                    <span>Domain Name Transfer</span>
+                                </a>
+                                <p class="detail-item-paragraph">Find your domain name faster with AI.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="Green electricity icon" loading="lazy" width="24" height="24"
+                                        decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                        style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-green-electricity.svg">
+                                    <span>Sustainability</span>
+                                </a>
+                                <p class="detail-item-paragraph">Hosting for a climate-neutral future</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header_two_dropdown header_two_dropdown_four cloud_computing">
+                    <div class="header_two_dropdown_inner">
+                        <div class="title">
+                            Virtual Servers
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1"
+                                        class="tw-inline tw-mr-5" style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                    <span>VPS Hosting</span>
+                                </a>
+                                <p class="detail-item-paragraph">With root access, NVMe storage, and Plesk license</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>VPS Hosting</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="KI-Icon mit einem Gehirn und neuronalen Netzen" loading="lazy" width="24"
+                                        height="24" decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                        style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/ionos-core/Icons/Mosaic-Blue-on-light/36384-artificial-intelligence.svg">
+                                    <span>Cloud Servers</span>
+                                </a>
+                                <p class="detail-item-paragraph">Pay as you go with your own scalable private server.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header_two_dropdown_inner">
+                        <div class="title">
+                            Security
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1"
+                                        class="tw-inline tw-mr-5" style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                    <span>Dedicated Servers</span>
+                                </a>
+                                <p class="detail-item-paragraph">Get enterprise hardware with unlimited traffic</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>VPS Hosting</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="header_two_dropdown_inner">
+                        <div class="title">
+                            Server Tools
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1"
+                                        class="tw-inline tw-mr-5" style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                    <span>Domain Name Registration</span>
+                                </a>
+                                <p class="detail-item-paragraph">Create your address on the web.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="KI-Icon mit einem Gehirn und neuronalen Netzen" loading="lazy" width="24"
+                                        height="24" decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                        style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/ionos-core/Icons/Mosaic-Blue-on-light/36384-artificial-intelligence.svg">
+                                    <span>Domain Name Transfer</span>
+                                </a>
+                                <p class="detail-item-paragraph">Find your domain name faster with AI.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header_two_dropdown_inner use_case">
+                        <div class="title">
+                            Use Case
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+
+                                    <span>Domain Name Registration</span>
+                                </a>
+                                <p class="detail-item-paragraph">Create your address on the web.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+
+                                    <span>Domain Name Transfer</span>
+                                </a>
+                                <p class="detail-item-paragraph">Find your domain name faster with AI.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="Green electricity icon" loading="lazy" width="24" height="24"
+                                        decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                        style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-green-electricity.svg">
+                                    <span>Sustainability</span>
+                                </a>
+                                <p class="detail-item-paragraph">Hosting for a climate-neutral future</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header_two_dropdown header_two_dropdown_four email_office">
+                    <div class="header_two_dropdown_inner">
+                        <div class="title">
+                            Virtual Servers
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1"
+                                        class="tw-inline tw-mr-5" style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                    <span>VPS Hosting</span>
+                                </a>
+                                <p class="detail-item-paragraph">With root access, NVMe storage, and Plesk license</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>VPS Hosting</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="KI-Icon mit einem Gehirn und neuronalen Netzen" loading="lazy" width="24"
+                                        height="24" decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                        style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/ionos-core/Icons/Mosaic-Blue-on-light/36384-artificial-intelligence.svg">
+                                    <span>Cloud Servers</span>
+                                </a>
+                                <p class="detail-item-paragraph">Pay as you go with your own scalable private server.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header_two_dropdown_inner">
+                        <div class="title">
+                            Security
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1"
+                                        class="tw-inline tw-mr-5" style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                    <span>Dedicated Servers</span>
+                                </a>
+                                <p class="detail-item-paragraph">Get enterprise hardware with unlimited traffic</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>VPS Hosting</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="header_two_dropdown_inner">
+                        <div class="title">
+                            Server Tools
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1"
+                                        class="tw-inline tw-mr-5" style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                    <span>Domain Name Registration</span>
+                                </a>
+                                <p class="detail-item-paragraph">Create your address on the web.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="KI-Icon mit einem Gehirn und neuronalen Netzen" loading="lazy" width="24"
+                                        height="24" decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                        style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/ionos-core/Icons/Mosaic-Blue-on-light/36384-artificial-intelligence.svg">
+                                    <span>Domain Name Transfer</span>
+                                </a>
+                                <p class="detail-item-paragraph">Find your domain name faster with AI.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header_two_dropdown_inner use_case">
+                        <div class="title">
+                            Use Case
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+
+                                    <span>Domain Name Registration</span>
+                                </a>
+                                <p class="detail-item-paragraph">Create your address on the web.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+
+                                    <span>Domain Name Transfer</span>
+                                </a>
+                                <p class="detail-item-paragraph">Find your domain name faster with AI.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="Green electricity icon" loading="lazy" width="24" height="24"
+                                        decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                        style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-green-electricity.svg">
+                                    <span>Sustainability</span>
+                                </a>
+                                <p class="detail-item-paragraph">Hosting for a climate-neutral future</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header_two_dropdown header_two_dropdown_four vps_hosting">
+                    <div class="header_two_dropdown_inner">
+                        <div class="title">
+                            Virtual Servers
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1"
+                                        class="tw-inline tw-mr-5" style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                    <span>VPS Hosting</span>
+                                </a>
+                                <p class="detail-item-paragraph">With root access, NVMe storage, and Plesk license</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>VPS Hosting</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="KI-Icon mit einem Gehirn und neuronalen Netzen" loading="lazy" width="24"
+                                        height="24" decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                        style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/ionos-core/Icons/Mosaic-Blue-on-light/36384-artificial-intelligence.svg">
+                                    <span>Cloud Servers</span>
+                                </a>
+                                <p class="detail-item-paragraph">Pay as you go with your own scalable private server.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header_two_dropdown_inner">
+                        <div class="title">
+                            Security
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1"
+                                        class="tw-inline tw-mr-5" style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                    <span>Dedicated Servers</span>
+                                </a>
+                                <p class="detail-item-paragraph">Get enterprise hardware with unlimited traffic</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>VPS Hosting</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+                                <a href="" class="detail-item-title sub-detail-item-title">
+
+                                    <span>Windows VPS</span>
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="header_two_dropdown_inner">
+                        <div class="title">
+                            Server Tools
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1"
+                                        class="tw-inline tw-mr-5" style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                    <span>Domain Name Registration</span>
+                                </a>
+                                <p class="detail-item-paragraph">Create your address on the web.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="KI-Icon mit einem Gehirn und neuronalen Netzen" loading="lazy" width="24"
+                                        height="24" decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                        style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/ionos-core/Icons/Mosaic-Blue-on-light/36384-artificial-intelligence.svg">
+                                    <span>Domain Name Transfer</span>
+                                </a>
+                                <p class="detail-item-paragraph">Find your domain name faster with AI.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header_two_dropdown_inner use_case">
+                        <div class="title">
+                            Use Case
+                        </div>
+                        <div class="details">
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+
+                                    <span>Domain Name Registration</span>
+                                </a>
+                                <p class="detail-item-paragraph">Create your address on the web.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+
+                                    <span>Domain Name Transfer</span>
+                                </a>
+                                <p class="detail-item-paragraph">Find your domain name faster with AI.</p>
+                            </div>
+                            <div class="details-item">
+                                <a href="" class="detail-item-title">
+                                    <img alt="Green electricity icon" loading="lazy" width="24" height="24"
+                                        decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                        style="color: transparent;"
+                                        src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-green-electricity.svg">
+                                    <span>Sustainability</span>
+                                </a>
+                                <p class="detail-item-paragraph">Hosting for a climate-neutral future</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="domain_search_mobile">
+            <div class="domain_search_txt">
+                <img alt=".com domain logo in white" id="280361" extension="svg" loading="eager" width="48" height="48"
+                    decoding="async" data-nimg="1" style="color:transparent"
+                    src="https://cs.uicdn.net/fileadmin/ionos-core/Logos/36382-com-domain-logo-white.svg">
+                <span>$5.10 for 1 year </span>
+            </div>
+
+            <form action="" class="domain_search_mobile_form">
+
+                <div class="input_group">
+                    <input type="search" name="" id="" placeholder="Search your domain now">
+                    <button type="submit"><img alt="" width="28" height="28" decoding="async" data-nimg="1"
+                            class="md:tw-hidden tw-block !tw-max-w-xs" style="color:transparent"
+                            src="data:image/svg+xml;base64,PHN2ZyBpZD0iSUNPTiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjQgMjQiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuY2xzLTEgewogICAgICAgIGZpbGw6ICNmZmY7CiAgICAgICAgb3BhY2l0eTogMDsKICAgICAgfQoKICAgICAgLmNscy0yLWFtYmVyIHsKICAgICAgICBmaWxsOiAjNTcyRjAwOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8ZyBpZD0iaWMtczI0LXJlZ3VsYXItbWFnbmlmaWVyIj4KICAgIDxwYXRoIGlkPSJiYWNrZ3JvdW5kIiBjbGFzcz0iY2xzLTEiIGQ9Ik01LDkuNUE0LjUsNC41LDAsMSwxLDkuNSwxNCw0LjUwNSw0LjUwNSwwLDAsMSw1LDkuNVoiIC8+CiAgICA8cGF0aCBpZD0iY29udGVudCIgY2xhc3M9ImNscy0yYS1hbWJlciIKICAgICAgZD0iTTIwLjcwNywxOS4yOTNsLTUuOTY1LTUuOTY1YTYuNTIzLDYuNTIzLDAsMSwwLTEuNDE0LDEuNDE0bDUuOTY1LDUuOTY1YTEsMSwwLDAsMCwxLjQxNC0xLjQxNFpNNSw5LjVBNC41LDQuNSwwLDEsMSw5LjUsMTQsNC41MDUsNC41MDUsMCwwLDEsNSw5LjVaIiAvPgogIDwvZz4KPC9zdmc+"></button>
+                </div>
+            </form>
+        </div>
+
+
+        <div class="mobile_header">
+            <div>
+                <div class="mobile_buttons">
+
+                    <div class="header_btn">
+                        <a href="">Domains & Hosting</a>
+                        <a href="">Cloud Computing</a>
+                        <a href="">Web Services</a>
+                        <a href="">Business Solutions</a>
+                    </div>
+
+                    <div class="mobile_header_dropdowns">
+                        <div class="mobile_header_dropdowns_item mobile_domain_click">
+                            <span>Domain & SSL</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                class="tw-fill-[#001b41] mobile_domain_icon" width="20">
+                                <path
+                                    d="M12 18a1.994 1.994 0 0 1-1.2-.4l-8-6a2 2 0 0 1 2.4-3.2l6.8 5.1 6.8-5.1a2 2 0 0 1 2.4 3.2l-8 6a1.994 1.994 0 0 1-1.2.4Z">
+                                </path>
+                            </svg>
+                        </div>
+
+
+
+
+                        <div class="mobile_domain mobile_dropdowns">
+
+                            <div class="header_two_dropdown_inner">
+                                <div class="title">
+                                    Domains
+                                </div>
+                                <div class="details">
+                                    <div class="details-item">
+                                        <a href="" class="detail-item-title">
+                                            <img alt="" loading="lazy" width="24" height="24" decoding="async"
+                                                data-nimg="1" class="tw-inline tw-mr-5" style="color: transparent;"
+                                                src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                            <span>Domain Name Registration</span>
+                                        </a>
+                                        <p class="detail-item-paragraph">Create your address on the web.</p>
+                                    </div>
+                                    <div class="details-item">
+                                        <a href="" class="detail-item-title">
+                                            <img alt="KI-Icon mit einem Gehirn und neuronalen Netzen" loading="lazy"
+                                                width="24" height="24" decoding="async" data-nimg="1"
+                                                class="tw-inline tw-mr-5" style="color: transparent;"
+                                                src="https://cs.uicdn.net/fileadmin/ionos-core/Icons/Mosaic-Blue-on-light/36384-artificial-intelligence.svg">
+                                            <span>Domain Name Transfer</span>
+                                        </a>
+                                        <p class="detail-item-paragraph">Find your domain name faster with AI.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header_two_dropdown_inner">
+                                <div class="title">
+                                    Security
+                                </div>
+                                <div class="details">
+                                    <div class="details-item">
+                                        <a href="" class="detail-item-title">
+                                            <img alt="" loading="lazy" width="24" height="24" decoding="async"
+                                                data-nimg="1" class="tw-inline tw-mr-5" style="color: transparent;"
+                                                src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                            <span>Domain Name Registration</span>
+                                        </a>
+                                        <p class="detail-item-paragraph">Create your address on the web.</p>
+                                    </div>
+                                    <div class="details-item">
+                                        <a href="" class="detail-item-title">
+                                            <img alt="KI-Icon mit einem Gehirn und neuronalen Netzen" loading="lazy"
+                                                width="24" height="24" decoding="async" data-nimg="1"
+                                                class="tw-inline tw-mr-5" style="color: transparent;"
+                                                src="https://cs.uicdn.net/fileadmin/ionos-core/Icons/Mosaic-Blue-on-light/36384-artificial-intelligence.svg">
+                                            <span>Domain Name Transfer</span>
+                                        </a>
+                                        <p class="detail-item-paragraph">Find your domain name faster with AI.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header_two_dropdown_inner use_case">
+                                <div class="title">
+                                    Use Case
+                                </div>
+                                <div class="details">
+                                    <div class="details-item">
+                                        <a href="" class="detail-item-title">
+
+                                            <span>Domain Name Registration</span>
+                                        </a>
+                                        <p class="detail-item-paragraph">Create your address on the web.</p>
+                                    </div>
+                                    <div class="details-item">
+                                        <a href="" class="detail-item-title">
+
+                                            <span>Domain Name Transfer</span>
+                                        </a>
+                                        <p class="detail-item-paragraph">Find your domain name faster with AI.</p>
+                                    </div>
+                                    <div class="details-item">
+                                        <a href="" class="detail-item-title">
+                                            <img alt="Green electricity icon" loading="lazy" width="24" height="24"
+                                                decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                                style="color: transparent;"
+                                                src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-green-electricity.svg">
+                                            <span>Sustainability</span>
+                                        </a>
+                                        <p class="detail-item-paragraph">Hosting for a climate-neutral future</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="mobile_header_dropdowns_item mobile_website_click">
+                            <span>Websites</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                class="tw-fill-[#001b41] mobile_website_icon" width="20">
+                                <path
+                                    d="M12 18a1.994 1.994 0 0 1-1.2-.4l-8-6a2 2 0 0 1 2.4-3.2l6.8 5.1 6.8-5.1a2 2 0 0 1 2.4 3.2l-8 6a1.994 1.994 0 0 1-1.2.4Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class=" mobile_dropdowns mobile_website">
+                            <div class="header_two_dropdown_four">
+                                <div class="header_two_dropdown_inner">
+                                    <div class="title">
+                                        Virtual Servers
+                                    </div>
+                                    <div class="details">
+                                        <div class="details-item">
+                                            <a href="" class="detail-item-title">
+                                                <img alt="" loading="lazy" width="24" height="24" decoding="async"
+                                                    data-nimg="1" class="tw-inline tw-mr-5" style="color: transparent;"
+                                                    src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                                <span>VPS Hosting</span>
+                                            </a>
+                                            <p class="detail-item-paragraph">With root access, NVMe storage, and Plesk
+                                                license</p>
+                                        </div>
+                                        <div class="details-item">
+                                            <a href="" class="detail-item-title sub-detail-item-title">
+
+                                                <span>VPS Hosting</span>
+                                            </a>
+                                            <a href="" class="detail-item-title sub-detail-item-title">
+
+                                                <span>Windows VPS</span>
+                                            </a>
+
+                                        </div>
+                                        <div class="details-item">
+                                            <a href="" class="detail-item-title">
+                                                <img alt="KI-Icon mit einem Gehirn und neuronalen Netzen" loading="lazy"
+                                                    width="24" height="24" decoding="async" data-nimg="1"
+                                                    class="tw-inline tw-mr-5" style="color: transparent;"
+                                                    src="https://cs.uicdn.net/fileadmin/ionos-core/Icons/Mosaic-Blue-on-light/36384-artificial-intelligence.svg">
+                                                <span>Cloud Servers</span>
+                                            </a>
+                                            <p class="detail-item-paragraph">Pay as you go with your own scalable
+                                                private server.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="header_two_dropdown_inner">
+                                    <div class="title">
+                                        Security
+                                    </div>
+                                    <div class="details">
+                                        <div class="details-item">
+                                            <a href="" class="detail-item-title">
+                                                <img alt="" loading="lazy" width="24" height="24" decoding="async"
+                                                    data-nimg="1" class="tw-inline tw-mr-5" style="color: transparent;"
+                                                    src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                                <span>Dedicated Servers</span>
+                                            </a>
+                                            <p class="detail-item-paragraph">Get enterprise hardware with unlimited
+                                                traffic</p>
+                                        </div>
+                                        <div class="details-item">
+                                            <a href="" class="detail-item-title sub-detail-item-title">
+
+                                                <span>VPS Hosting</span>
+                                            </a>
+                                            <a href="" class="detail-item-title sub-detail-item-title">
+
+                                                <span>Windows VPS</span>
+                                            </a>
+                                            <a href="" class="detail-item-title sub-detail-item-title">
+
+                                                <span>Windows VPS</span>
+                                            </a>
+                                            <a href="" class="detail-item-title sub-detail-item-title">
+
+                                                <span>Windows VPS</span>
+                                            </a>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="header_two_dropdown_inner">
+                                    <div class="title">
+                                        Server Tools
+                                    </div>
+                                    <div class="details">
+                                        <div class="details-item">
+                                            <a href="" class="detail-item-title">
+                                                <img alt="" loading="lazy" width="24" height="24" decoding="async"
+                                                    data-nimg="1" class="tw-inline tw-mr-5" style="color: transparent;"
+                                                    src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-domain-generic.svg">
+                                                <span>Domain Name Registration</span>
+                                            </a>
+                                            <p class="detail-item-paragraph">Create your address on the web.</p>
+                                        </div>
+                                        <div class="details-item">
+                                            <a href="" class="detail-item-title">
+                                                <img alt="KI-Icon mit einem Gehirn und neuronalen Netzen" loading="lazy"
+                                                    width="24" height="24" decoding="async" data-nimg="1"
+                                                    class="tw-inline tw-mr-5" style="color: transparent;"
+                                                    src="https://cs.uicdn.net/fileadmin/ionos-core/Icons/Mosaic-Blue-on-light/36384-artificial-intelligence.svg">
+                                                <span>Domain Name Transfer</span>
+                                            </a>
+                                            <p class="detail-item-paragraph">Find your domain name faster with AI.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="header_two_dropdown_inner use_case">
+                                    <div class="title">
+                                        Use Case
+                                    </div>
+                                    <div class="details">
+                                        <div class="details-item">
+                                            <a href="" class="detail-item-title">
+
+                                                <span>Domain Name Registration</span>
+                                            </a>
+                                            <p class="detail-item-paragraph">Create your address on the web.</p>
+                                        </div>
+                                        <div class="details-item">
+                                            <a href="" class="detail-item-title">
+
+                                                <span>Domain Name Transfer</span>
+                                            </a>
+                                            <p class="detail-item-paragraph">Find your domain name faster with AI.</p>
+                                        </div>
+                                        <div class="details-item">
+                                            <a href="" class="detail-item-title">
+                                                <img alt="Green electricity icon" loading="lazy" width="24" height="24"
+                                                    decoding="async" data-nimg="1" class="tw-inline tw-mr-5"
+                                                    style="color: transparent;"
+                                                    src="https://cs.uicdn.net/fileadmin/user_upload/Icons/on-light/icon-green-electricity.svg">
+                                                <span>Sustainability</span>
+                                            </a>
+                                            <p class="detail-item-paragraph">Hosting for a climate-neutral future</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </header>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            function toggleDomains(domains, domains_click, icon) {
+                var isDomainsVisible = false; // Variable to track whether .domains is visible
+                var isMouseOverDomains = false; // Variable to track whether mouse is over .domains
+
+                $(domains).hide();
+
+                $(domains_click).on({
+                    mouseenter: function (e) {
+                        e.preventDefault();
+                        if (!isDomainsVisible) {
+                            $(domains).slideDown();
+                            $(icon).css("transform", "rotate(180deg)"); // Rotate the icon
+                            isDomainsVisible = true; // Update the visibility state
+                        }
+                    },
+                    mouseleave: function (e) {
+                        e.preventDefault();
+                        // Slide up .domains with a slight delay, then check if mouse is over .domains
+                        setTimeout(function () {
+                            if (!isMouseOverDomains) {
+                                $(domains).slideUp();
+                                $(icon).css("transform", "rotate(0deg)"); // Reset the icon rotation
+                                isDomainsVisible = false; // Update the visibility state
+                            }
+                        }, 100); // Adjust delay as needed
+                    }
+                });
+
+                $(domains).on({
+                    mouseenter: function () {
+                        isMouseOverDomains = true;
+                    },
+                    mouseleave: function () {
+                        isMouseOverDomains = false;
+                    }
+                });
+
+                // Prevent .domains from sliding up when mouse leaves it
+                $(domains).on("mouseleave", function () {
+                    if (!$(domains_click).is(":hover")) {
+                        $(domains).slideUp();
+                        $(icon).css("transform", "rotate(0deg)"); // Reset the icon rotation
+                        isDomainsVisible = false; // Update the visibility state
+                    }
+                });
+            }
+
+            // Call the function with the appropriate parameters
+            toggleDomains(".domains", ".domains_click", ".domain_click_icon");
+            toggleDomains(".web_hosting", ".web_hosting_click", ".hosting_click_icon");
+            toggleDomains(".wordpress", ".wordpress_hosting_click", ".wordpress_click_icon");
+            toggleDomains(".website_design", ".website_design_click", ".website_design_click_icon");
+            toggleDomains(".cloud_computing", ".cloud_computing_click", ".cloud_computing_click_icon");
+            toggleDomains(".email_office", ".email_office_click", ".email_office_click_icon");
+            toggleDomains(".vps_hosting", ".vps_hosting_click", ".vps_hosting_click_icon");
+            toggleDomains(".mobile_domain", ".mobile_domain_click", ".mobile_domain_icon");
+            toggleDomains(".mobile_website", ".mobile_website_click", ".mobile_website_icon");
+
+
+            // Toggle the mobile menu
+            $(".hamburger_menu").click(function () {
+                $(".mobile_menu").slideToggle();
+            });
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>
